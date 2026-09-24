@@ -1,0 +1,15 @@
+/* @import "./reset.scss"; */
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #5e6ad2;
+  --color-brand-professional: #ff9400;
+  --color-brand-professional-dark: #1d1e2a;
+  --color-success: #10b981;
+  --color-neutral-border: #e5e7eb;
+  --color-surface-subtle: #fafafa;
+  --color-surface-muted: #f1f2f4;
+  --color-text-subdued: #6d7175;
+  --color-border-muted: #0000001f;
+}

@@ -1,0 +1,91 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+$track-padding: 0.25rem;
+$track-border-radius: 0.375rem;
+$track-height: 1.25rem;
+$track-width: 2rem;
+$track-box-shadow: inset 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.05);
+
+.switcher {
+  height: $track-height;
+  width: $track-width;
+  background: var(--p-color-icon-secondary);
+  padding: $track-padding;
+  box-shadow: $track-box-shadow;
+  border: none;
+  cursor: pointer;
+  border-radius: $track-border-radius;
+  transition: background var(--p-motion-duration-50) var(--p-motion-ease);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -0.0625rem;
+    right: -0.0625rem;
+    bottom: -0.0625rem;
+    left: -0.0625rem;
+    display: block;
+    pointer-events: none;
+    box-shadow: 0 0 0 -0.0625rem var(--p-color-border-focus);
+    transition: box-shadow var(--p-motion-duration-100) var(--p-motion-ease);
+    border-radius: calc(var(--p-border-radius-100) + 0.0625rem);
+  }
+
+  &:hover:not([disabled]) {
+    &[aria-checked="false"] {
+      background: var(--p-color-icon-secondary-hover);
+    }
+
+    &[aria-checked="true"] {
+      background: var(--p-color-icon-hover);
+    }
+  }
+
+  &[aria-checked="true"] {
+    background: var(--p-color-bg-inverse);
+    transition: background var(--p-motion-duration-50) var(--p-motion-ease);
+
+    > .cursor {
+      transform: translateX(100%);
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    transition: none;
+    background: var(--p-color-bg-surface-secondary-selected);
+
+    &[aria-checked="true"] {
+      background: var(--p-color-bg-surface-secondary-selected);
+    }
+  }
+}
+
+$knob-height: 0.75rem;
+$knob-width: 0.75rem;
+$knob-border-radius: 0.1875rem;
+
+.cursor {
+  height: $knob-height;
+  width: $knob-width;
+  border-radius: $knob-border-radius;
+  background: var(--p-color-bg-surface);
+  transition: transform var(--p-motion-duration-50) var(--p-motion-ease);
+}
+
+.prefix {
+  font-size: 14px;
+  line-height: 21px;
+  display: inline-block;
+  vertical-align: top;
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
+}
