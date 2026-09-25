@@ -13,7 +13,8 @@
     "switch-env:prod": "./switch-env.sh prod",
     "switch-env:dev": "chmod +x switch-env.sh && ./switch-env.sh dev",
     "switch-env:clean": "./switch-env.sh clean",
-    "switch-env:stop": "./switch-env.sh stop"
+    "switch-env:stop": "./switch-env.sh stop",
+    "knip": "knip"
   },
   "dependencies": {
     "@shopify/react-i18n": "^7.14.0",
@@ -48,6 +49,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
+    "knip": "^6.38.0",
     "rollup-plugin-visualizer": "^7.0.1",
     "sass": "^1.101.0",
     "typescript": "~6.0.2",
