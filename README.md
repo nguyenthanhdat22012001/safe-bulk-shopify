@@ -2,6 +2,8 @@
 
 SafeBulk is an embedded Shopify admin app for editing products in bulk. You can preview every change before it runs and undo it afterwards.
 
+🎥 **[Watch the demo (Loom)](https://www.loom.com/share/6c30f307347d4555b0214ff8be0ab84f)**
+
 This repository contains the **frontend only**: a React + TypeScript single-page app that runs inside Shopify Admin through App Bridge. It talks to a separate backend API, set with `VITE_ROOT_API`.
 
 ## Features
@@ -111,8 +113,6 @@ docker run -p 8080:80 safebulk-app
 ```
 
 The build fails if either build arg is missing. The image serves the SPA with nginx and has a health check at `/health-check`.
-
-> **Note:** some files the Dockerfile and scripts expect are not committed yet: `nginx/default.conf`, `app/package-lock.json`, `app/switch-env.sh` (used by the `switch-env:*` scripts), and `shopify.app*.toml`. Add them before building the image or running those scripts.
 
 ## Conventions
 
